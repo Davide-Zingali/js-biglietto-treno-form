@@ -19,10 +19,13 @@ bottoneGenera.addEventListener("click",
     // condizione per prezzo scontato o meno
     if (etaInput < 18) {
       var prezzoFinale = prezzoIntero - ((20 * prezzoIntero) / 100).toFixed(2);
+      var prezzo20 = document.getElementById("offerta").innerHTML = "Prezzo scontato del 20%";
     } else if (etaInput > 65) {
       var prezzoFinale = prezzoIntero - ((40 * prezzoIntero) / 100).toFixed(2);
+      var prezzo40 = document.getElementById("offerta").innerHTML = "Prezzo scontato del 40%";
     } else {
       var prezzoFinale = prezzoIntero;
+      var prezzoSenzaSconto = document.getElementById("offerta").innerHTML = "Prezzo Intero";
     }
 
     // selezione output prezzo

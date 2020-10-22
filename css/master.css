@@ -37,6 +37,7 @@ body {
 /* parte output */
 .parte-output {
   display: flex;
+  justify-content: space-around;
   background-color: white;
   margin: 50px 0;
 }
