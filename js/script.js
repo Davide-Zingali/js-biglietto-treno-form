@@ -16,15 +16,31 @@ bottoneGenera.addEventListener("click",
     var prezzoIntero = parseInt(0.21 * kmInput);
     console.log(prezzoIntero);
 
-    // condizione
+    // condizione per prezzo scontato o meno
     if (etaInput < 18) {
-      var prezzoOutput = prezzoIntero - ((20 * prezzoIntero) / 100).toFixed(2);
+      var prezzoFinale = prezzoIntero - ((20 * prezzoIntero) / 100).toFixed(2);
     } else if (etaInput > 65) {
-      var prezzoOutput = prezzoIntero - ((40 * prezzoIntero) / 100).toFixed(2);
+      var prezzoFinale = prezzoIntero - ((40 * prezzoIntero) / 100).toFixed(2);
     } else {
-      var prezzoOutput = prezzoIntero;
+      var prezzoFinale = prezzoIntero;
     }
-    console.log(prezzoOutput);
+
+    // selezione output prezzo
+    var prezzoOutput = document.getElementById('prezzo-output');
+    prezzoOutput.innerHTML = prezzoFinale + "€";
+    console.log("prezzo gia scontato" + prezzoFinale);
+
+    // selezione su variabile output per codici
+    var codiceCarrozzaOutput = document.getElementById('codice-carrozza');
+    var codiceCabinaOutput = document.getElementById('codice-cabina');
+
+    // generare numeri random per carrozza e codice
+    codiceCarrozzaRandom = Math.floor(Math.random() * 10);
+    codiceCarrozzaOutput.innerHTML = codiceCarrozzaRandom;
+
+    codiceCabinaRandom = Math.floor(Math.random() * 10000);
+    codiceCabinaOutput.innerHTML = codiceCabinaRandom;
+
   }
 );
 
